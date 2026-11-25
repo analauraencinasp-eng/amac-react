@@ -39,15 +39,15 @@ export default function RegistroCandidato() {
     ].filter(Boolean).join('\n')
 
     const { error } = await supabase.auth.signUp({
-      email: datos.correo,
+      email: datos.correo.trim(),
       password: datos.contrasena,
       options: {
         data: {
           rol: 'candidato',
           nombre: nombreCompleto,
-          telefono: datos.telefono,
+          telefono: datos.telefono.trim(),
           edad: datos.edad,
-          colonia: datos.colonia,
+          colonia: datos.colonia.trim(),
           experiencia,
         },
       },
