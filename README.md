@@ -296,7 +296,7 @@ Para probar la restricción de aprobación se necesita **al menos un candidato a
 - **Cuentas de prueba:** consultar la sección 11.
 
 **Video de presentación (12–15 minutos):** PEGAR ENLACE AQUÍ  
-**Diapositivas de la presentación (PDF o enlace):** [https://canva.link/6pysmtvimzxv9d](https://canva.link/6pysmtvimzxv9d)
+**Diapositivas de la presentación (PDF o enlace):** [https://canva.link/6pvsmytvimzxv9d](https://canva.link/6pvsmytvimzxv9d)
 
 
 ---
