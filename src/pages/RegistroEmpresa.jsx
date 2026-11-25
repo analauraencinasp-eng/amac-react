@@ -24,14 +24,14 @@ export default function RegistroEmpresa() {
     setMensaje('')
 
     const { error } = await supabase.auth.signUp({
-      email: datos.correo,
+      email: datos.correo.trim(),
       password: datos.contrasena,
       options: {
         data: {
           rol: 'empresa',
           nombre: datos.nombre.trim(),
           giro: datos.giro,
-          telefono: datos.telefono,
+          telefono: datos.telefono.trim(),
         },
       },
     })
@@ -93,6 +93,7 @@ export default function RegistroEmpresa() {
           <div className="campo">
             <label htmlFor="correoEmpresa">Correo electrónico *</label>
             <input id="correoEmpresa" name="correo" type="email"
+              autoComplete="email"
               value={datos.correo} onChange={cambiar} required />
           </div>
         </div>
