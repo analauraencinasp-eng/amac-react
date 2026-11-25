@@ -22,7 +22,23 @@ export default function PublicarVacante() {
 
   async function guardar(e) {
     e.preventDefault()
+  
+    const campos = [
+      datos.titulo,
+      datos.ubicacion,
+      datos.descripcion,
+      datos.requisitos,
+      datos.prestaciones,
+    ]
+  
+    if (campos.some(campo => !campo.trim()) ||
+        (porTelefono && !datos.telefono.trim())) {
+      setMensaje('Completa los campos obligatorios con información válida.')
+      return
+    }
+  
     const sueldo = Number(datos.sueldo)
+
     if (!(sueldo > 0)) {
       setMensaje('El sueldo debe ser mayor a cero.')
       return
@@ -57,7 +73,7 @@ export default function PublicarVacante() {
 
       <div className="encabezado-centrado">
         <h1>Publicar nueva vacante</h1>
-        <p>Completa los datos que podrán consultar las personas candidatas. Todos los campos son obligatorios.</p>
+        <p>Completa los campos marcados con *. El teléfono solo es obligatorio si eliges recibir postulaciones por teléfono.</p>
       </div>
 
       <form className="tarjeta formulario-largo" onSubmit={guardar}>
